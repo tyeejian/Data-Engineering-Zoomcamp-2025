@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: staging
+    database: "{{ env_var('DBT_DATABASE', 'solid-authority-448207-q6') }}"
+    schema: "{{ env_var('DBT_SCHEMA', '04_zoompcamp_homework') }}"
+      # loaded_at_field: record_loaded_at
+    tables:
+      - name: green_tripdata_new
+      - name: yellow_tripdata_new
+         # freshness:
+           # error_after: {count: 6, period: hour)
+      - name: fhv_new
+           
